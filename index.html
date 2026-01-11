@@ -12,16 +12,13 @@
   <button onclick="showLobby()">Home</button>
   <button onclick="showGame('dice')">Dice</button>
   <button onclick="showGame('crash')">Crash</button>
-  <button onclick="showGame('roulette')">Roulette</button>
-  <button onclick="showGame('slots')">Slots</button>
-  <button onclick="showGame('plinko')">Plinko</button>
   <button onclick="showGame('mines')">Mines</button>
 </div>
 
 <div class="main">
 
   <div class="top">
-    Balance: $<span id="balance">0</span>
+    Balance: $<span id="balance">1000.00</span>
   </div>
 
   <div class="logo">
@@ -30,21 +27,12 @@
   </div>
 
   <!-- LOBBY -->
-  <div id="lobby" class="lobby">
+  <div id="lobby" class="lobby" style="display:flex;flex-wrap:wrap;gap:10px;">
     <div class="card" onclick="showGame('dice')">
       <img src="assets/dice.png" alt="Dice">
     </div>
     <div class="card" onclick="showGame('crash')">
       <img src="assets/crash.png" alt="Crash">
-    </div>
-    <div class="card" onclick="showGame('roulette')">
-      <img src="assets/roulette.png" alt="Roulette">
-    </div>
-    <div class="card" onclick="showGame('slots')">
-      <img src="assets/slots.png" alt="Slots">
-    </div>
-    <div class="card" onclick="showGame('plinko')">
-      <img src="assets/plinko.png" alt="Plinko">
     </div>
     <div class="card" onclick="showGame('mines')">
       <img src="assets/mines.png" alt="Mines">
@@ -52,21 +40,16 @@
   </div>
 
   <!-- GAME SCREENS -->
-  <div id="dice" class="game"></div>
-  <div id="crash" class="game"></div>
-  <div id="roulette" class="game"></div>
-  <div id="slots" class="game"></div>
-  <div id="plinko" class="game"></div>
-  <div id="mines" class="game"></div>
+  <div id="dice" class="game" style="display:none;"></div>
+  <div id="crash" class="game" style="display:none;"></div>
+  <div id="mines" class="game" style="display:none;"></div>
 
 </div>
 
 <script src="app.js"></script>
 <script src="games/dice.js"></script>
 <script src="games/crash.js"></script>
-<script src="games/roulette.js"></script>
-<script src="games/slots.js"></script>
-<script src="games/plinko.js"></script>
 <script src="games/mines.js"></script>
 </body>
 </html>
+
