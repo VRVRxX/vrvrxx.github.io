@@ -1,27 +1,26 @@
-// Global balance
-if(!window.balance) window.balance = 1000;
-document.getElementById("balance").textContent = window.balance.toFixed(2);
+let balance = Number(localStorage.getItem("balance")) || 1000;
+const balanceEl = document.getElementById("balance");
 
 function updateBalance(){
-  document.getElementById("balance").textContent = window.balance.toFixed(2);
+  balanceEl.textContent = balance.toFixed(2);
+  localStorage.setItem("balance", balance.toFixed(2));
 }
+updateBalance();
 
-// Hide all games and show lobby
 function showLobby(){
-  const games = ["dice","crash","mines"];
-  games.forEach(g => document.getElementById(g).style.display = "none");
-  document.getElementById("lobby").style.display = "flex";
+  document.getElementById("lobby").style.display = "grid";
+  document.querySelectorAll(".game").forEach(g=>g.style.display="none");
 }
 
-// Show a specific game
-function showGame(gameId){
-  const games = ["dice","crash","mines"];
-  games.forEach(g => document.getElementById(g).style.display = "none");
+function showGame(id){
   document.getElementById("lobby").style.display = "none";
-  document.getElementById(gameId).style.display = "block";
+  document.querySelectorAll(".game").forEach(g=>g.style.display="none");
+  document.getElementById(id).style.display = "block";
 
-  // Load game logic
-  if(gameId==="crash") loadCrash();
-  if(gameId==="dice") loadDice();
-  if(gameId==="mines") loadMines();
+  if(id==="crash") loadCrash();
+  if(id==="dice") loadDice();
+  if(id==="mines") loadMines();
+  if(id==="roulette") loadRoulette();
+  if(id==="slots") loadSlots();
+  if(id==="plinko") loadPlinko();
 }
