@@ -106,3 +106,80 @@ body {
   margin-top: 20px;
   min-height: 400px; /* prevents empty divs from collapsing */
 }
+/* ===== MOBILE BASE ===== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+
+/* Prevent double-tap zoom */
+button, input, select, div {
+  touch-action: manipulation;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  min-height: 48px;
+  min-width: 48px;
+  font-size: 16px;
+}
+
+/* ===== INPUTS ===== */
+input, select {
+  font-size: 16px; /* prevents iOS zoom */
+  padding: 10px;
+}
+
+/* ===== GAME CONTAINER ===== */
+.game-container {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* ===== MOBILE GRID SCALING ===== */
+@media (max-width: 480px) {
+
+  #minesGrid {
+    grid-template-columns: repeat(5, 52px) !important;
+    gap: 8px !important;
+    justify-content: center;
+  }
+
+  #minesGrid > div {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* ===== VERY SMALL PHONES ===== */
+@media (max-width: 360px) {
+
+  #minesGrid {
+    grid-template-columns: repeat(5, 46px) !important;
+    gap: 6px !important;
+  }
+
+  #minesGrid > div {
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
