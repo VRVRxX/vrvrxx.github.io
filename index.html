@@ -21,7 +21,7 @@
 <div class="main">
 
   <div class="top">
-    Balance: $<span id="balance">1000.00</span>
+    Balance: $<span id="balance">0</span>
   </div>
 
   <div class="logo">
@@ -30,7 +30,7 @@
   </div>
 
   <!-- LOBBY -->
-  <div id="lobby" class="lobby" style="display:flex;flex-wrap:wrap;gap:10px;">
+  <div id="lobby" class="lobby">
     <div class="card" onclick="showGame('dice')">
       <img src="assets/dice.png" alt="Dice">
     </div>
@@ -52,18 +52,21 @@
   </div>
 
   <!-- GAME SCREENS -->
-  <div id="dice" class="game" style="display:none;"></div>
-  <div id="crash" class="game" style="display:none;"></div>
-  <div id="roulette" class="game" style="display:none;"></div>
-  <div id="slots" class="game" style="display:none;"></div>
-  <div id="plinko" class="game" style="display:none;"></div>
-  <div id="mines" class="game" style="display:none;"></div>
+  <div id="dice" class="game"></div>
+  <div id="crash" class="game"></div>
+  <div id="roulette" class="game"></div>
+  <div id="slots" class="game"></div>
+  <div id="plinko" class="game"></div>
+  <div id="mines" class="game"></div>
 
 </div>
 
 <script src="app.js"></script>
 <script src="games/dice.js"></script>
 <script src="games/crash.js"></script>
+<script src="games/roulette.js"></script>
+<script src="games/slots.js"></script>
+<script src="games/plinko.js"></script>
 <script src="games/mines.js"></script>
 </body>
 </html>
