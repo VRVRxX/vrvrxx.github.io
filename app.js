@@ -1,20 +1,27 @@
-let balance = Number(localStorage.getItem("balance")) || 1000;
-const balanceEl = document.getElementById("balance");
+// Global balance
+if(!window.balance) window.balance = 1000;
+document.getElementById("balance").textContent = window.balance.toFixed(2);
 
 function updateBalance(){
-  balanceEl.textContent = balance;
-  localStorage.setItem("balance", balance);
-}
-updateBalance();
-
-function showGame(id){
-  document.getElementById("lobby").style.display = "none";
-  document.querySelectorAll(".game").forEach(g=>g.style.display="none");
-  const game = document.getElementById(id);
-  if(game) game.style.display = "block";
+  document.getElementById("balance").textContent = window.balance.toFixed(2);
 }
 
+// Hide all games and show lobby
 function showLobby(){
-  document.getElementById("lobby").style.display = "grid";
-  document.querySelectorAll(".game").forEach(g=>g.style.display="none");
+  const games = ["dice","crash","mines"];
+  games.forEach(g => document.getElementById(g).style.display = "none");
+  document.getElementById("lobby").style.display = "flex";
+}
+
+// Show a specific game
+function showGame(gameId){
+  const games = ["dice","crash","mines"];
+  games.forEach(g => document.getElementById(g).style.display = "none");
+  document.getElementById("lobby").style.display = "none";
+  document.getElementById(gameId).style.display = "block";
+
+  // Load game logic
+  if(gameId==="crash") loadCrash();
+  if(gameId==="dice") loadDice();
+  if(gameId==="mines") loadMines();
 }
